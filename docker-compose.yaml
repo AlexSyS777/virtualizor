@@ -13,3 +13,4 @@ services:
     - PGID=1000
     - PASSWORD
     - EMAIL
+    restart: always
