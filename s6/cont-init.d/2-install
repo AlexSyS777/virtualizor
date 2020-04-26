@@ -1,6 +1,13 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
+# check required env variables
+if [ -z "$EMAIL" ]
+then
+  echo "EMAIL variable are empty. Exiting..."
+  exit 1
+fi
+
 # Flush the IP Tables
 #iptables -F >> /dev/null 2>&1
 #iptables -P INPUT ACCEPT >> /dev/null 2>&1

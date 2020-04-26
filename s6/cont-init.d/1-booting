@@ -2,9 +2,9 @@
 # shellcheck shell=bash
 
 # check required env variables
-if [ -z "$PASSWORD" ] && [ -z "$EMAIL" ]
+if [ -z "$PASSWORD" ]
 then
-  echo "PASSWORD and/or EMAIL variables are empty. Set and retry"
+  echo "PASSWORD variable are empty. Exiting..."
   exit 1
 fi
 
