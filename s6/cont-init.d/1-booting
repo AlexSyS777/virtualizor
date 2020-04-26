@@ -1,6 +1,13 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
+# check required env variables
+if [ -z "$PASSWORD" ] && [ -z "$EMAIL" ]
+then
+  echo "PASSWORD and/or EMAIL variables are empty. Set and retry"
+  exit 1
+fi
+
 # Install necessary packages
 
 apt-get update > /dev/null 2>&1 && apt-get install -y lsb-release iputils-ping wget > /dev/null 2>&1

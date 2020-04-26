@@ -1,0 +1,15 @@
+version: '3'
+services:
+  virtualizor-master:
+    build: .
+    ports:
+    - "4084:4084"
+    - "4085:4085"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ./data:/usr/local/emps/:rw
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - PASSWORD
+    - EMAIL
